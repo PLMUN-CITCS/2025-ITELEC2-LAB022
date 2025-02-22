@@ -1,7 +1,7 @@
-# 2025-ITELEC2-LAB018
+# 2025-ITELEC2-LAB022
 Week 05 - Working with Functions
 
-Laboratory # 18 - Guided Coding Exercise: Nested Functions and Reusing User-Defined Functions
+Laboratory # 22 - Group Activity # 01 - Problem 04: Simple Menu-Driven Program with Function-Based Operations
 
 ## **Instructions**
 
@@ -77,88 +77,88 @@ Only perform this if this is the first time you will setup your Git Environment
 
 ### **Step 3: Complete the Assignment**
 
-**Laboratory # 18 - Guided Coding Exercise: Nested Functions and Reusing User-Defined Functions**
+**Laboratory # 22 - Group Activity # 01 - Problem 04: Simple Menu-Driven Program with Function-Based Operations**
 
    **Objective:**
-   - Learn to break down a complex task into smaller, more manageable functions.
-   - Understand the concept of nested function calls (calling a function within another function).
-   - Practice writing functions that work together to achieve a larger goal.
-   - Reinforce the benefits of function reuse for code modularity and efficiency.
+   This challenge focuses on creating a menu-driven program, demonstrating how to structure a program with multiple functionalities using functions. You will practice:
+   - Designing functions with specific purposes.
+   - Using a while loop for continuous program execution.
+   - Handling user input and menu choices.
+   - Using conditional statements (if, elif, else) for decision-making.
+   - (Optionally) Creating helper functions for better modularity.
 
    **Desired Output:**
    ```bash
-   The sum of squares is: 29
-   ```
-   (Since 2² + 3² + 4² = 4 + 9 + 16 = 29)
+   Menu:
+   1. Greet User
+   2. Check Even/Odd
+   3. Exit
+   Enter your choice (1-3): 1
+   Hello! Welcome!
    
-   **Notable Observations (to be discussed after completing the exercise):**
-   - Nested Function Calls: The sum_of_squares() function calls the square() function within its loop. This is an example of a nested function call.
-   - Function Reuse: The square() function is reused multiple times within the sum_of_squares() function, demonstrating the modularity and efficiency of using functions.
-   - Breaking Down Complexity: The problem of calculating the sum of squares is broken down into smaller, more manageable functions (square and sum_of_squares), making the code easier to understand, test, and maintain.
+   Menu:
+   1. Greet User
+   2. Check Even/Odd
+   3. Exit
+   Enter your choice (1-3): 2
+   Enter an integer: 33
+   33 is an Odd number.
+   
+   Menu:
+   1. Greet User
+   2. Check Even/Odd
+   3. Exit
+   Enter your choice (1-3): 3
+   Exiting program. Goodbye!
+   ```
+   
+   **Notable Observations:**
+   - Menu-Driven Structure: The program uses a loop to repeatedly display a menu and process user choices, providing a basic interactive user interface.
+   - Function Decomposition: Different functionalities are separated into functions (display_menu, handle_menu_choice, and potentially greet_user and even_odd_checker_action), making the code more organized and easier to understand.
+   - Code Reusability: You can potentially reuse the check_even_odd function from a previous challenge, demonstrating the benefits of modular function design.
 
    **Python Best Practices**
-   - Single Responsibility Principle: Keep functions focused on a single, well-defined task. This makes your code more modular and easier to reason about.
-   - Docstrings: Write clear and concise docstrings to describe the purpose and parameters of each function.
-   - Meaningful Names: Use descriptive variable names and maintain consistency in your naming conventions.
-   - Indentation: Proper indentation is crucial for readability and to define the structure of your code, especially when using nested functions.
-   - Test Thoroughly: Test your functions individually and together to ensure they work correctly in all scenarios.
+   - Meaningful Function and Variable Names: Use descriptive names that clearly indicate the purpose of functions and variables.
+   - Docstrings: Include docstrings for each function to explain its purpose, parameters, and return value.
+   - Type Hints (Optional but Recommended): Use type hints to specify the expected data types for function parameters and return values.
+   - Input Validation (Challenge Extension): Consider adding input validation to handle invalid menu choices (e.g., non-numeric input, choices outside the valid range).
+   - Clear Menu Structure: Display the menu options in a clear and organized way to make it user-friendly.
+   - Helper Functions: Use helper functions to break down complex tasks (like handling the even/odd check) into smaller, more manageable units.
+   - Test Thoroughly: Test your program with various menu choices and inputs to ensure it works correctly in all cases.
 
-   **Step-by-Step Instructions:**
+   **Challenge Requirements:**
 
    1. Setting up: Open your preferred Python environment or Text Editor, and create a Python Script.
-      - Required Filename: `nested_functions.py`
+      - Required Filename: `menu_driven_program_functions.py`
       
-   2. Define a function to calculate the square of a number (square):
-      - Use the def keyword followed by the function name (square).
-      - Add parentheses () and include a parameter name (e.g., num) inside the parentheses. This defines the input that the function will accept.
-      - End the line with a colon :.
-      - Inside the function definition (indented), calculate the square of the num (using num * num or num ** 2).
-      - Use the return statement to return the calculated square.
-```python
-def square(num):
-    """Returns the square of the given number."""
-    return num * num  # Or num ** 2
-```
+   2. display_menu() Function:
+      - Purpose: Displays the program's menu options to the user.
+      - No parameters.
+      - Prints the menu options in a clear and numbered format.
       
-   3. Define a function to calculate the sum of squares (sum_of_squares):
-      - Use the def keyword followed by the function name (sum_of_squares).
-      - Add parentheses () and include a parameter name (e.g., numbers) inside the parentheses. This will be a list of numbers.
-      - End the line with a colon :.
-      - Inside the function definition (indented):
-         - Initialize a variable named total to 0. This will store the sum of squares.
-         - Use a for loop to iterate through each number (n) in the numbers list.
-         - Inside the loop, call the square() function that you defined earlier, passing n as an argument. This calculates the square of the current number.
-         - Add the returned square to the total.
-      - After the loop, use the return statement to return the calculated total.
-```python
-def sum_of_squares(numbers):
-    """Returns the sum of the squares of the numbers in the list."""
-    total = 0
-    for n in numbers:
-        total += square(n)  # Call the square function and add to total
-    return total
-```
+   3. handle_menu_choice(choice) Function:
+      - Purpose: Executes the corresponding action based on the user's menu choice.
+      - Takes one parameter: choice (integer representing the menu option).
+      - Uses conditional statements (if, elif, else) to determine the action:
+         - If choice is 1, call a helper function greet_user() (if you create one) to display a greeting message.
+         - If choice is 2, call a helper function even_odd_checker_action() (if you create one) to get an integer input and check if it's even or odd.
+         - If choice is 3, print an exit message and return a signal to terminate the program loop (e.g., True).
+         - For any invalid choice, print an error message and return a signal to continue the program loop (e.g., False).
 
-   4. Define a list of numbers and call the function:
-      - After the function definitions (not indented), create a list of numbers (e.g., ``) and store it in a variable named numbers_list.
-      - Call the sum_of_squares() function, passing numbers_list as an argument. Store the returned result in a variable named result.
-```python
-numbers_list = [2, 3, 4]
-result = sum_of_squares(numbers_list)
-```
+   4. (Optional) Helper Functions:
+      - greet_user(): Prints a greeting message.
+      - even_odd_checker_action(): Handles the logic for the even/odd check, including getting input and potentially reusing the check_even_odd() function from a previous challenge.
 
-   5. Print the final result:
-      - Use the print() function with an f-string to display the final result with a descriptive message.
-```python
-print(f"The sum of squares is: {result}")
-```
-
-   6. Complete Code: Combine the steps above to form the complete program.
-   7. Run the code: Execute your Python code.
-   8. Observe the output: Verify that the output matches the "Desired Output" shown above.
+   5. Main Program Flow:
+      - Uses a while True loop to continuously display the menu and process user choices.
+      - Inside the loop:
+         - Calls display_menu() to show the menu.
+         - Gets the user's menu choice.
+         - Calls handle_menu_choice() with the user's choice.
+         - If handle_menu_choice() returns a signal to terminate (e.g., True), break out of the loop to end the program.
 
    **Conclusion**
-   This exercise demonstrated the power of using nested functions and reusing user-defined functions to solve more complex problems.  You learned how to break down a task into smaller, more manageable functions and how to call functions within other functions.  By reusing functions, you can write more efficient and modular code that is easier to understand and maintain.  This approach is essential for building larger and more complex Python programs.
+   This challenge helps you understand how to structure a program with multiple functionalities using a menu-driven approach. By separating different operations into functions, you can create more organized and modular code. This approach also improves code reusability and makes it easier to add or modify features in the future.
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
@@ -182,7 +182,7 @@ git add .
    Write a meaningful commit message:
    
 ```bash
-git commit -m "Submitting Python Week 04 - Laboratory # 18"
+git commit -m "Submitting Python Week 05 - Laboratory # 22"
 ```
    
 4. Push your changes to GitHub:
