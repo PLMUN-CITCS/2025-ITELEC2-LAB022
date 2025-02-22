@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run the Python program and test all input/output pairs in the tests folder
-python_script="nested_functions.py"
+python_script="menu_driven_program_functions.py"
 
 declare -A results
 
@@ -32,6 +32,7 @@ find tests -mindepth 1 -maxdepth 1 -type d -print0 | while IFS= read -r -d $'\0'
       echo "Python program crashed for test $test_name:"
       echo "$output"
       test_result="CRASHED"
+	    exit 1
     else
       diff -Bw <(cat "$output_file") <(echo "$output") > diff.txt
       if [ -s diff.txt ]; then

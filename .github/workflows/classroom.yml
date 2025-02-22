@@ -15,27 +15,27 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
-    - name: File Existence Check - nested_functions.py
+    - name: File Existence Check - menu_driven_program_functions.py.py
       id: file-existence-check
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: File Existence Check - nested_functions.py
-        command: "test -f nested_functions.py"
+        test-name: File Existence Check - menu_driven_program_functions.py.py
+        command: "test -f menu_driven_program_functions.py.py"
         timeout: 10
         max-score: 10
-    - name: Syntax Check - nested_functions.py
+    - name: Syntax Check - menu_driven_program_functions.py.py
       id: syntax-check
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: Syntax Check - nested_functions.py
-        command: "pylint nested_functions.py --disable=C"
+        test-name: Syntax Check - menu_driven_program_functions.py.py
+        command: "pylint menu_driven_program_functions.py.py --disable=C"
         timeout: 10
         max-score: 30
-    - name: Run Check - nested_functions.py
+    - name: Run Check - menu_driven_program_functions.py.py
       id: logic-check
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: Run Check - nested_functions.py
+        test-name: Run Check - menu_driven_program_functions.py.py
         setup-command: "chmod +x ./run_tests.sh"
         command: "./run_tests.sh"
         timeout: 10
